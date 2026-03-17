@@ -1,0 +1,26 @@
+{
+  "theta_total": 64,
+  "theta_odd": 28,
+  "theta_even": 36,
+  "psl27_order": 168,
+  "odd_orbit_sizes": [
+    28
+  ],
+  "even_orbit_sizes": [
+    1,
+    7,
+    7,
+    21
+  ],
+  "odd_transitive": true,
+  "e6_positive_roots": 36,
+  "d4_dim": 28,
+  "route_b": {
+    "N_12_5w": 109,
+    "dim_D4": 28,
+    "sum": 137
+  },
+  "syzygetic_pairs": 210,
+  "azygetic_pairs": 168,
+  "genus_3_is_half_rank_e6": true
+}
