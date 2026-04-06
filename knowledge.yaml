@@ -1,0 +1,408 @@
+kcp_version: '0.14'
+project: merkabit-paper8-klein-quartic
+description: >
+  Paper 8 of the Merkabit series: "The Klein Quartic Connection". Establishes that the {3,7} tiling of the Klein quartic —
+  a genus-3 Riemann surface with PSL(2,7) automorphism group (168 elements) — forms the fundamental domain for the merkabit
+  phase space. Includes analysis of azygetic graph structure, vertex bijection with PSL(2,7), cyclotomic field connections
+  to the merkabit constant α, and theta function analysis.
+version: '1.0'
+created: '2026-04-06'
+maintainer: Selina Stenberg
+units:
+- id: readme
+  path: README.md
+  intent: Project overview and orientation for Paper 8. Read first.
+  scope: global
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: eager
+    token_estimate: 400
+    priority: critical
+- id: manuscript
+  path: Paper_8_Klein_Quartic.docx
+  intent: >
+    Main manuscript for Paper 8: "The Klein Quartic Connection". Full paper text including proofs, theorems, and conclusions.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - full paper
+  - manuscript
+  hints:
+    load_strategy: lazy
+    token_estimate: 1500
+    priority: critical
+- id: manuscript_copy
+  path: Paper_8_Klein_Quartic - Copy.docx
+  intent: >
+    Duplicate of main manuscript. Not part of canonical manifest; retained for reference only. Prefer manuscript unit for
+    all access.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: reference
+- id: code_data_availability
+  path: Code_Data_Availability.docx
+  intent: Code and data availability statement for Paper 8 submission.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - availability
+  - data availability
+  - code availability
+  hints:
+    load_strategy: lazy
+    token_estimate: 300
+    priority: supplementary
+- id: klein_quartic_analysis
+  path: klein_quartic_analysis.py
+  intent: >
+    Core analysis of the Klein quartic {3,7} tiling connection to the merkabit structure. Central to the paper's main argument.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Klein quartic
+  - genus 3
+  - '{3,7} tiling'
+  - Riemann surface
+  - 168 automorphisms
+  hints:
+    load_strategy: lazy
+    token_estimate: 800
+    priority: critical
+- id: azygetic_graph
+  path: azygetic_graph.py
+  intent: >
+    Constructs the azygetic (non-intersecting) graph on the Klein quartic. Produces data feeding into Figure 1.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - azygetic
+  - Klein quartic
+  - non-intersecting
+  - 168 automorphisms
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: critical
+- id: vertex_bijection
+  path: vertex_bijection.py
+  intent: >
+    Establishes the bijection between PSL(2,7) elements and Klein quartic vertices. Core algebraic correspondence used throughout
+    the paper.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Klein quartic
+  - PSL(2,7)
+  - vertex bijection
+  - 168 automorphisms
+  - '{3,7} tiling'
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: critical
+- id: cyclotomic_analysis
+  path: cyclotomic_analysis.py
+  intent: >
+    Cyclotomic field analysis connecting the Klein quartic to the merkabit constant α.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - cyclotomic
+  - cyclotomic field
+  - merkabit constant
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: supplementary
+- id: theta_analysis
+  path: theta_analysis.py
+  intent: >
+    Theta function analysis on the Klein quartic. Connects to modular forms and the merkabit phase space.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - theta function
+  - modular
+  - theta analysis
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: supplementary
+- id: route_b_justification
+  path: route_b_justification.py
+  intent: >
+    Justification and derivation for "Route B" — an alternative derivation path for the Klein quartic connection.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Route B
+  - alternative derivation
+  - justification
+  hints:
+    load_strategy: lazy
+    token_estimate: 500
+    priority: supplementary
+- id: generate_figures
+  path: generate_figures.py
+  intent: Generates all figures for Paper 8 from analysis outputs.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - figures
+  - generate figures
+  - reproduce figures
+  hints:
+    load_strategy: lazy
+    token_estimate: 400
+    priority: supplementary
+- id: output
+  path: output.txt
+  intent: Simulation output reference values from the core analysis scripts.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - output
+  - simulation output
+  - reference values
+  hints:
+    load_strategy: lazy
+    token_estimate: 400
+    priority: supplementary
+- id: results_summary
+  path: results_summary.json
+  intent: JSON summary of all results from the Paper 8 analyses.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - results
+  - results summary
+  - all results
+  hints:
+    load_strategy: lazy
+    token_estimate: 500
+    priority: supplementary
+- id: build_paper8
+  path: build_paper8.js
+  intent: Node.js build script for Paper 8 document assembly.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - build
+  - build paper
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: build_availability
+  path: build_availability.js
+  intent: Node.js build script for the code/data availability statement.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - build availability
+  - availability statement build
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig1_azygetic_graph
+  path: fig1_azygetic_graph.png
+  intent: 'Figure 1: Azygetic graph on the Klein quartic.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 1
+  - fig1
+  - azygetic graph figure
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+- id: fig2_adjacency_matrix
+  path: fig2_adjacency_matrix.png
+  intent: 'Figure 2: Adjacency matrix visualization.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 2
+  - fig2
+  - adjacency matrix figure
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+- id: fig3_subfield_lattice
+  path: fig3_subfield_lattice.png
+  intent: 'Figure 3: Subfield lattice visualization.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 3
+  - fig3
+  - subfield lattice
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+- id: fig4_forcing_chain
+  path: fig4_forcing_chain.png
+  intent: 'Figure 4: Forcing chain diagram.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 4
+  - fig4
+  - forcing chain
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+- id: fig5_conjugacy_classes
+  path: fig5_conjugacy_classes.png
+  intent: 'Figure 5: Conjugacy classes of PSL(2,7).'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 5
+  - fig5
+  - conjugacy classes
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+- id: fig6_spectral_comparison
+  path: fig6_spectral_comparison.png
+  intent: 'Figure 6: Spectral comparison.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Figure 6
+  - fig6
+  - spectral comparison
+  hints:
+    load_strategy: lazy
+    token_estimate: 100
+    priority: reference
+relationships:
+- from: klein_quartic_analysis
+  to: azygetic_graph
+  type: feeds
+  description: 'Klein quartic analysis provides the tiling structure consumed by the azygetic graph construction.
+
+    '
+- from: klein_quartic_analysis
+  to: vertex_bijection
+  type: feeds
+  description: 'Core analysis defines the vertex set that the bijection maps to PSL(2,7) elements.
+
+    '
+- from: vertex_bijection
+  to: cyclotomic_analysis
+  type: feeds
+  description: 'The PSL(2,7) vertex correspondence underpins the cyclotomic field analysis connecting Klein quartic to α.
+
+    '
+- from: cyclotomic_analysis
+  to: theta_analysis
+  type: related
+  description: 'Cyclotomic and theta analyses both connect the Klein quartic to the merkabit constant via complementary methods.
+
+    '
+- from: klein_quartic_analysis
+  to: route_b_justification
+  type: related
+  description: 'Route B provides an alternative derivation to the main path established in the core Klein quartic analysis.
+
+    '
+- from: generate_figures
+  to: fig1_azygetic_graph
+  type: produces
+- from: generate_figures
+  to: fig2_adjacency_matrix
+  type: produces
+- from: generate_figures
+  to: fig3_subfield_lattice
+  type: produces
+- from: generate_figures
+  to: fig4_forcing_chain
+  type: produces
+- from: generate_figures
+  to: fig5_conjugacy_classes
+  type: produces
+- from: generate_figures
+  to: fig6_spectral_comparison
+  type: produces
+- from: azygetic_graph
+  to: fig1_azygetic_graph
+  type: produces
+- from: klein_quartic_analysis
+  to: results_summary
+  type: feeds
+- from: azygetic_graph
+  to: results_summary
+  type: feeds
+- from: vertex_bijection
+  to: results_summary
+  type: feeds
+- from: cyclotomic_analysis
+  to: results_summary
+  type: feeds
+- from: theta_analysis
+  to: results_summary
+  type: feeds
+- from: manuscript
+  to: code_data_availability
+  type: related
+  description: 'Availability statement accompanies the manuscript for journal submission.
+
+    '
+- from: manuscript_copy
+  to: manuscript
+  type: duplicate
+  description: 'Duplicate of the canonical manuscript. Use manuscript for all access.
+
+    '
